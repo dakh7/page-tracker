@@ -38,7 +38,7 @@ WORKDIR /home/pagetracker
 
 ENV VIRTUALENV=/home/pagetracker/venv
 RUN python3 -m venv $VIRTUALENV
-ENV PATH="%VIRTUALENV/bin:$PATH"
+ENV PATH="$VIRTUALENV/bin:$PATH"
 
 COPY --from=builder /home/pagetracker/dist/page_tracker*.whl /home/pagetracker
 
